@@ -1,0 +1,20 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\AI\Battle\Enemy\Unit_HumanMage.cs">
+    <Files>
+      <File FileName="Assets\Scripts\AI\Battle\Enemy\UnitClass.cs" Line="22" Column="3" />
+      <File FileName="Assets\Scripts\GameController\BattleController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\Player.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\Fireball.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\AI\Battle\Enemy\Unit_HumanMage.cs" Line="16" Column="68" />
+      <File FileName="Assets\Scripts\AI\Battle\Enemy\Unit_HumanFighter.cs" Line="56" Column="68" />
+      <File FileName="Assets\Scripts\AI\Battle\Player\PUnitClass.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\AI\Battle\Player\PUnit_HumanFighter.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\AI\Battle\Player\PUnit_HumanMage.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

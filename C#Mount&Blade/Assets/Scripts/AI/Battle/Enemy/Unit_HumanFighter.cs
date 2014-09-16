@@ -1,0 +1,59 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class Unit_HumanFighter : UnitClass 
+{
+	void Start()
+	{
+		unitHealth.health = 400f;
+		attackSpeed = 1.0f;
+		speed = 2.0f;
+		player = GameObject.FindGameObjectWithTag(Tags.player);
+		playerScript = player.GetComponent<Player>();
+		unitRegion = GameObject.FindGameObjectWithTag(Tags.unitRegion);
+		pUnitRegion = GameObject.FindGameObjectWithTag(Tags.pUnitRegion);
+		regionMiddle = GameObject.FindGameObjectWithTag(Tags.region);
+		if(moveRangeCollider.inMoveList.Count > 0)
+		{
+			Debug.Log ("MOVERANGELIST " + moveRangeCollider.inMoveList.Count);
+		}
+	}
+
+	void FixedUpdate()
+	{
+		timer += Time.deltaTime;
+		//Debug.Log (attackSpeed + "  " + inAttackRange);
+		//Debug.Log ("t" + timer);
+		if(inAttackRange && timer > attackSpeed && inRangeList.Count > 0)
+		{
+			if(inRangeList[0] == null)
+			{
+				inRangeList.RemoveAt(0);
+			}
+			else
+			{
+				timer = 0.0f;
+				Vector3 tempPos = transform.position;
+				tempPos.x -= 1;
+				Instantiate(attackObject,tempPos,Quaternion.identity);
+				if(inRangeList[0] == player)
+				{
+					playerScript.TakeDamage (10);
+				}
+				else
+				{
+					inRangeList[0].GetComponent<PUnitHealth>().TakeDamage (10);
+				}
+			}
+		}
+		else if(!inAttackRange)
+		{
+			//...Need an array of all enemy units in the battle
+			transform.position = Vector3.MoveTowards (transform.position,regionMiddle.transform.position,speed*Time.deltaTime);
+		}
+		else if(inRangeList.Count == 0 && inAttackRange)
+		{
+			inAttackRange = false;
+		}
+	}
+}
